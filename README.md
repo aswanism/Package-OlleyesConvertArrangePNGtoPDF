@@ -9,3 +9,35 @@
    1. Downloaded the results in PNG format—I obtained two separate PNG files, one for the right eye (RE) and another for the left eye (LE).
    2. Converted the PNG files to PDF—Next, I transformed these PNG images into PDF format.
    3. Arranged the PDFs side by side—I positioned the RE and LE results next to each other within a single PDF file.
+      
+-------
+Step 1: Prepare PNG file
+a. Download and save Olleyes result in png format. Make sure download only 1 test at a time.
+b. Unzip file.
+c. Open the folder and you can see 2 png files (page_01.png & page_02.png). Keep the names as they are.
+
+
+Step 2 Install OlleyesConvertArrangePNGtoPDF Package
+a. Launch R  and open new R script.
+b. Type in these code and run it:
+
+library(devtools)
+build("OlleyesConvertPNGtoPDF")
+
+
+Step 3. Use package
+a. Use this script to generate your pdf files:
+
+library(OlleyesConvertArrangePNGtoPDF)
+
+file_source <- "From/Your/Computer"
+OD_file <- "page_01.pdf"
+OS_file <- "page_02.pdf"
+Output_file <- "ChooseTheAppropriateName.pdf" #Example: Subj 1_11-07-24_OU_Olleyes
+
+convert_pngs_to_pdf(file_source, OD_file, OS_file, Output_file)
+
+Step 4. Get The Files
+a. Open folder "From/Your/Computer" which where you generate your files.
+b. Copy and paste the acquired files to your preferred folder.
+c. Delete the remaining files inside "From/Your/Computer" folder.
