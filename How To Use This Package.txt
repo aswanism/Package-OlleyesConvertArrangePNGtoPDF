@@ -23,3 +23,8 @@ OS_file <- "page_02.pdf"
 Output_file <- "ChooseTheAppropriateName.pdf" #Example: Subj 1_11-07-24_OU_Olleyes
 
 convert_pngs_to_pdf(file_source, OD_file, OS_file, Output_file)
+
+Step 4. Get The Files
+a. Open folder "From/Your/Computer" which where you generate your files.
+b. Copy and paste the acquired files to your preferred folder.
+c. Delete the remaining files inside "From/Your/Computer" folder.
