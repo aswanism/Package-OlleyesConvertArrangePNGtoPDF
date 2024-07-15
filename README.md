@@ -11,6 +11,8 @@
    3. Arranged the PDFs side by side—I positioned the RE and LE results next to each other within a single PDF file.
       
 -------
+How to use this package?
+
 Step 1: Prepare PNG file
 a. Download and save Olleyes result in png format. Make sure download only 1 test at a time.
 b. Unzip file.
