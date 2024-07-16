@@ -19,23 +19,27 @@ b. Unzip file.
 c. Open the folder and you can see 2 png files (page_01.png & page_02.png). Keep the names as they are.
 
 
-Step 2 Install OlleyesConvertArrangePNGtoPDF Package
-a. Launch R  and open new R script.
-b. Type in these code and run it:
+Step 2 Install Packages
+a. Install these 2 packages before you proceed to the next step:
+   i. install.packages("devtools")
+   ii. install.packages("magick")
 
-library(devtools)
-build("OlleyesConvertPNGtoPDF")
+b. Install "Package-OlleyesConvertArrangePNGtoPDF" by typing in these code and run it:
+
+   library(devtools)
+   install.github("aswanism/Package-OlleyesConvertArrangePNGtoPDF")
 
 
-Step 3. Use package
+Step 3. Use "Package-OlleyesConvertArrangePNGtoPDF package
 a. Use this script to generate your pdf files:
 
 library(OlleyesConvertArrangePNGtoPDF)
+library(magick)
 
 file_source <- "From/Your/Computer"
 OD_file <- "page_01.pdf"
 OS_file <- "page_02.pdf"
-Output_file <- "ChooseTheAppropriateName.pdf" #Example: Subj 1_11-07-24_OU_Olleyes
+Output_file <- "ChooseTheAppropriateName.pdf" #Example: "Subj 1_11-07-24_OU_Olleyes.pdf"
 
 convert_pngs_to_pdf(file_source, OD_file, OS_file, Output_file)
 
