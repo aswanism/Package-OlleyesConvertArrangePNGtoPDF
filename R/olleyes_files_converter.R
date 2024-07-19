@@ -4,7 +4,7 @@
 #' @param Output_file The output PDF file name without .pdf extension.
 #' @export
 convert_pngs_to_pdf <- function(file_source, output_file) {
-  library(pdftools)
+
   library(magick)
 
   # List all PNG files in the specified directory
@@ -33,6 +33,8 @@ convert_pngs_to_pdf <- function(file_source, output_file) {
   image_write(image_join(combined_images), path = combined_pdf_path, format = "pdf")
 
   cat("PDF files have been merged successfully into", combined_pdf_path, "\n")
+
+}
 
 # Example usage
 file_source <- "C:/Users/muham/Downloads/0001-John-Stratton-BUNDLE-41598-03-29-2024-21_06_33_report (4)"
