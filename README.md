@@ -20,13 +20,14 @@ c. Open the folder and you can see 2 png files (page_01.png & page_02.png). Keep
 
 Step 2 Install Packages
 a. Install these 2 packages before you proceed to the next step:
-   i. install.packages("devtools")
-   ii. install.packages("magick")
+
+          install.packages("devtools")
+          install.packages("magick")
 
 b. Install "Package-OlleyesConvertArrangePNGtoPDF" by typing in these code and run it:
 
-   library(devtools)
-   install_github("aswanism/Package-OlleyesConvertArrangePNGtoPDF")
+          library(devtools)
+          install_github("aswanism/Package-OlleyesConvertArrangePNGtoPDF")
 
 
 Step 3. Use "Package-OlleyesConvertArrangePNGtoPDF package
