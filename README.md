@@ -7,8 +7,7 @@
  To address this, I took the following steps:
  
    1. Downloaded the results in PNG format—I obtained two separate PNG files, one for the right eye (RE) and another for the left eye (LE).
-   2. Converted the PNG files to PDF—Next, I transformed these PNG images into PDF format.
-   3. Arranged the PDFs side by side—I positioned the RE and LE results next to each other within a single PDF file.
+   2. Arranged the PDFs side by side—I positioned the RE and LE results next to each other within a single PDF file.
       
 -------
 How to use this package?
@@ -33,15 +32,13 @@ b. Install "Package-OlleyesConvertArrangePNGtoPDF" by typing in these code and r
 Step 3. Use "Package-OlleyesConvertArrangePNGtoPDF package
 a. Use this script to generate your pdf files:
 
-library(OlleyesConvertArrangePNGtoPDF)
-library(magick)
-
-file_source <- "From/Your/Computer"
-OD_file <- "page_01.pdf"
-OS_file <- "page_02.pdf"
-Output_file <- "ChooseTheAppropriateName.pdf" #Example: "Subj 1_11-07-24_OU_Olleyes.pdf"
-
-convert_pngs_to_pdf(file_source, OD_file, OS_file, Output_file)
+         library(OlleyesConvertArrangePNGtoPDF)
+         library(magick)
+         
+         file_source <- "From/Your/Computer"
+         output_file <- "ChooseTheAppropriateName.pdf" #Example: "Subj 1_11-07-24_OU_Olleyes.pdf"
+         
+         convert_pngs_to_pdf(file_source,  output_file)
 
 Step 4. Get The Files
 a. Open folder "From/Your/Computer" which where you generate your files.
