@@ -6,6 +6,7 @@
 convert_pngs_to_pdf <- function(file_source, output_file) {
 
   library(magick)
+  library(pdftools)
 
   # List all PNG files in the specified directory
   png_files <- list.files(file_source, pattern = "\\.png$", full.names = TRUE)
