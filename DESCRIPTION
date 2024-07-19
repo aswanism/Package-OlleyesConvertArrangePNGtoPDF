@@ -1,7 +1,7 @@
 Package: OlleyesConvertArrangePNGtoPDF
 Type: Package
 Title: Convert PNGs to PDF
-Version: 0.0.2
+Version: 0.0.3
 Author: Azwan Ismail
 Maintainer: Azwan Ismail   <muhamad.azwan.ism@gmail.com>
 Description: A package to convert PNG files to a combined PDF.
