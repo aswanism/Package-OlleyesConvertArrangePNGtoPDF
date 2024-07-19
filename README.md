@@ -27,7 +27,7 @@ a. Install these 2 packages before you proceed to the next step:
 b. Install "Package-OlleyesConvertArrangePNGtoPDF" by typing in these code and run it:
 
    library(devtools)
-   install.github("aswanism/Package-OlleyesConvertArrangePNGtoPDF")
+   install_github("aswanism/Package-OlleyesConvertArrangePNGtoPDF")
 
 
 Step 3. Use "Package-OlleyesConvertArrangePNGtoPDF package
