@@ -1,30 +1,41 @@
 #' Convert PNGs to PDF and combine OD and OS PDFs
 #'
 #' @param file_source The directory containing PNG files.
-#' @param OD_file The OD PDF file to combine.
-#' @param OS_file The OS PDF file to combine.
-#' @param Output_file The output PDF file name.
+#' @param Output_file The output PDF file name without .pdf extension.
 #' @export
-convert_pngs_to_pdf <- function(file_source, OD_file, OS_file, Output_file) {
-  convert_png_to_pdf <- function(png_file_path) {
-    img <- image_read(png_file_path)
-    pdf_file_path <- sub("\\.png$", ".pdf", png_file_path)
-    image_write(img, path = pdf_file_path, format = "pdf")
-    cat("Converted", png_file_path, "to", pdf_file_path, "\n")
-  }
+convert_pngs_to_pdf <- function(file_source, output_file) {
+  library(pdftools)
+  library(magick)
 
+  # List all PNG files in the specified directory
   png_files <- list.files(file_source, pattern = "\\.png$", full.names = TRUE)
 
-  lapply(png_files, convert_png_to_pdf)
+  # Check if any PNG files are found
+  if (length(png_files) == 0) {
+    stop("No PNG files found in the specified directory. Please check the file path and ensure there are PNG files.")
+  }
 
-  setwd(file_source)
+  # Combine images side by side for each pair
+  combined_images <- list()
+  for (i in seq(1, length(png_files), by = 2)) {
+    if (i + 1 <= length(png_files)) {
+      combined_image <- image_append(image_read(c(png_files[i], png_files[i + 1])), stack = FALSE)
+    } else {
+      combined_image <- image_read(png_files[i])
+    }
+    combined_images <- c(combined_images, list(combined_image))
+  }
 
-  pdf_OD <- image_read_pdf(OD_file)
-  pdf_OS <- image_read_pdf(OS_file)
+  output_file <- sub("\\.pdf$", "", output_file)
 
-  combined_pdf <- image_append(c(pdf_OD, pdf_OS), stack = FALSE)
+  # Save combined images as a new PDF file with multiple pages
+  combined_pdf_path <- paste0(output_file, ".pdf")
+  image_write(image_join(combined_images), path = combined_pdf_path, format = "pdf")
 
-  image_write(combined_pdf, path = Output_file, format = "pdf")
+  cat("PDF files have been merged successfully into", combined_pdf_path, "\n")
 
-  cat("Combined PDF saved as", Output_file, "\n")
-}
+# Example usage
+file_source <- "C:/Users/muham/Downloads/0001-John-Stratton-BUNDLE-41598-03-29-2024-21_06_33_report (4)"
+output_file <- "Combined_Olleyes_Results_2"
+
+convert_pngs_to_pdf(file_source, output_file)
